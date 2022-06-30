@@ -15,6 +15,7 @@ const {
 } = require('@handlebars/allow-prototype-access');
 
 require('./controllers/posts')(app);
+require('./controllers/comments.js')(app);
 require('./data/reddit-db');
 
 // Use "main" as our default layout
