@@ -1,10 +1,12 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcryptjs');
+const User = require('../models/user');
 
 const userSchema = new Schema(
 	{
 		username: { type: String, required: true },
 		password: { type: String, select: false },
+		posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
 	},
 	{ timestamps: true }
 );

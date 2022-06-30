@@ -9,9 +9,11 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Reddit</a>
                 </li>
+                {{#if currentUser}}
                 <li class="nav-item">
                 <li><a href="/posts/new" class="btn btn-primary navbar-btn">New Post</a></li>
                 </li>
+                {{/if}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,11 +33,14 @@
                 </li>
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
-                        ...
+
                         <ul class="nav navbar-nav navbar-right">
+                            {{#if currentUser}}
                             <li><a href="/logout">Logout</a></li>
-                            <li><a href="/login">Login</a></li>
+                            {{else}}
+                            <li><a href="/login" style="margin-right: 20px">Login</a></li>
                             <li><a href="/sign-up">Sign Up</a></li>
+                            {{/if}}
                         </ul>
                     </div>
                 </nav>
