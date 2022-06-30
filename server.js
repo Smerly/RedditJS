@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(checkAuth);
+app.use(express.static('public'));
 
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars');
